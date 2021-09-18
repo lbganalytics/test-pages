@@ -1,4 +1,4 @@
-var events = {
+var testEvents = {
   "Splash Screen": [0],
   "Log On": [1, 2],
   "Enter Details": [3, 4],
@@ -11,7 +11,7 @@ var events = {
   "Keep Using MI and go to home page": [16, 17, 18]
 }
 
-var data = [
+var testData = [
   {
     "EventID": "E00",
     "Presentation": "Native",
@@ -703,9 +703,9 @@ var data = [
   }
 ];
 
-for (var k in events) {
+for (var k in testEvents) {
 
-  makeButton(k.trim(), events[k].join(","));
+  makeButton(k.trim(), testEvents[k].join(","));
 
 }
 
@@ -715,7 +715,7 @@ function makeButton(action, eventList) {
   b.innerText = action;
   b.onclick = function () {
     for(var i = 0; i < eventList.length; i++){
-      utag.view(eventList[i]);
+      utag.view(testData[1 * eventList[i]]);
     }
   }
   document.body.appendChild(b);
