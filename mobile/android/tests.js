@@ -710,10 +710,13 @@ for (var k in events) {
 }
 
 function makeButton(action, eventList) {
+  eventList = eventList.split(",");
   var b = document.createElement("button");
   b.innerText = action;
   b.onclick = function () {
-    alert(eventList.split(","));
+    for(var i = 0; i < eventList.length; i++){
+      utag.view(eventList[i]);
+    }
   }
   document.body.appendChild(b);
   document.body.appendChild(document.createElement("br"));
